@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+  <title>Seattle Tract Travel Survey</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/leaflet.css" />
+  <script src="js/leaflet.js"></script>
+  <script src="https://d3js.org/topojson.v2.min.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+  <script src="https://d3js.org/d3-queue.v3.min.js"></script>
+  <script src="js/viz.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="col-md-6" id="map_canvas">
+      <button type="button" class="btn btn-default" id="reset">Reset filters</button>
+    </div>
+    <div class="col-md-6" id="right_panel">
+
+      <div class = "col-md-12" id="title">
+                  <h1 align="center">Seattle Tract Travel Survey</br><small>Philippe Vaillant
+                      & Dylan Babbs</small></h1>
+                   <p>This visualization explores the travel patterns throughout the city
+                     of Seattle through US Census tracts, transportation mode, transportation
+                     purpose, and hour of day. Hover on the map to explore popular
+                     travel paths. Filter by mode or purpose using the checkboxes. Data source:
+                     <a href="http://www.psrc.org/data/transportation/travel-surveys/2014-household">
+                     2014 Puget Sound Regional Travel Study</a></p>
+      </div>
+
+      <div class="col-md-12" id="filter_pane">
+        
+        <div class="col-md-6" id="purpose_filter">
+                  <h4>Filter by purpose of trip:</h4>
+                  <ul class="list-group row">
+                     <li class="list-group-item col-xs-6"><input type="checkbox" value=1 checked><label>Home</label></li>
+                     <li class="list-group-item col-xs-6"><input type="checkbox" value=2 checked><label>Work</label></li>
+                     <li class="list-group-item col-xs-6"><input type="checkbox" value=3 checked><label>Shopping</label></li>
+                     <li class="list-group-item col-xs-6"><input type="checkbox" value=4 checked><label>Other</label></li>
+                  </ul>
+        </div>
+
+        <div class="col-md-6" id="mode_filter">
+                  <h4>Filter by purpose of trip:</h4>
+                  <ul class="list-group row">
+                     <li class="list-group-item col-xs-6"><input type="checkbox" value=1 checked><label>Drive</label></li>
+                     <li class="list-group-item col-xs-6"><input type="checkbox" value=2 checked><label>Bicycle</label></li>
+                     <li class="list-group-item col-xs-6"><input type="checkbox" value=3 checked><label>Walk</label></li>
+                     <li class="list-group-item col-xs-6"><input type="checkbox" value=4 checked><label>Bus</label></li>
+                     <li class="list-group-item col-xs-6"><input type="checkbox" value=5 checked><label>Other</label></li>
+                  </ul>
+        </div>
+
+      </div>
+
+      <div class="col-md-12" id="info_pane">
+        <h4>Tract Information</h4>
+        <div class="col-md-6" id="tooltip_1_id" class="tooltip"></div>
+        <div class="col-md-6" id="tooltip_1_detail" class="tooltip"></div>
+        <div class="col-md-6" id="tooltip_2_id" class="tooltip"></div>
+        <div class="col-md-6" id="tooltip_2_detail" class="tooltip"></div>
+      </div>
+
+      <div class="col-md-12" id="barchart_pane">
+          <h4>Distribution of trips by hour of day:</h4>
+          <div id="barchart"></div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+
+</html>

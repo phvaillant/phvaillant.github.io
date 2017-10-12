@@ -1,0 +1,109 @@
+html, body, #map_canvas, #right_panel, .container-fluid {
+	height: 100%;
+	padding: 0px;
+}
+
+#title {
+	height: 35%;
+	overflow-y: scroll;
+}
+
+#reset {
+  float: right;
+  z-index: 2;
+  position: relative;
+  margin: 10px;
+}
+
+#filter_pane {
+	height: 20%;
+	overflow-y: scroll;
+}
+
+.list-group-item {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	border: none;
+}
+
+label {
+	margin-left: 5px;
+}
+
+#info_pane {
+	height: 15%;
+	overflow-y: scroll;
+}
+
+#barchart_pane {
+	height: 30%;
+}
+
+.tract_cell {
+  fill: #FF9933;
+  fill-opacity: .1;
+  stroke: #FF9933;
+  stroke-width: 1.5px;
+  pointer-events:all;
+}
+
+.tract_cell:hover, .tract_clicked {
+  fill: #FF9933;
+  fill-opacity: .7;
+}
+
+.tract_links {
+  display: none;
+  stroke: #000;
+}
+
+.tract:hover .tract_links, .links_clicked {
+  display: inline;
+  fill: red;
+  fill-opacity: .7;
+  pointer-events:none;
+}
+
+.tooltip {
+      color: #222;
+      background: #fff;
+      padding: .5em;
+      text-shadow: #f5f5f5 0 1px 0;
+      font-family: "Helvetica Neue";
+      border-radius: 2px;
+      font-size: 14px;
+      opacity: 1;
+    }
+
+/*.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; 
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+*/
+#barchart {
+	height: calc(100% - 39px);
+	padding: 0px;
+}
+
+#svg_bar {
+	display: block;
+}
+
+.highlighted {
+	fill: #FF9933!important;
+}
+
+.bar {
+	fill: teal;
+}
